@@ -1,3 +1,6 @@
+Problem Statement:
+Source: https://leetcode.com/problems/arranging-coins/
+
 
 Solution 1:
 
