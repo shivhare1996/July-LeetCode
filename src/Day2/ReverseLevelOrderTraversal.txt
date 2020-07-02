@@ -1,0 +1,38 @@
+Problem Statement:
+Source: https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+
+Solution 1:
+
+Simply first find the Height of the tree.
+For each level -> (height to 1) find the nodes which are present at that level and add that in the list.
+Add each list of levels to desired allLevels List. It will be desired solution.
+
+Time Complexity O(n*2)
+Space Complexity O(n)
+
+
+I feel this solution is necessary to see, as it will teach you basic tree operations. How to calculate height, and overall get the feel of moving into binary tree in recursion.
+
+
+Solution 2:
+
+Statement is to find the Level Order Traversal but from bottom up.
+Do Level Order Traversal level by level and save each nodes of particular level in an Array. Finally when moving to other level, save this level to
+allLevel Array.
+
+How to Do this?
+
+1. Use queue to travel level by travel. Take a Queue and add it in queue.
+2. Now for every loop we will have nodes for that level. (Run the loop till that level via fetching size)
+3. Create an ArrayList for holding that level. Get the size of current queue and loop it until size > 0
+4. Take element one by one and add their children if exist to the queue.
+5. Add that node into that ArrayList which you have created for holding that level.
+6. Add this level array to AllLevels Arraylist which you have created.
+
+
+Now, you have Array of Array of all levels, from top to bottom order. Reverse the collection to get the desired result.
+
+Time Complexity O(n)
+Space Complexity O(n)
+
+/* Happy Coding */
