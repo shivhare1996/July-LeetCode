@@ -1,0 +1,38 @@
+Problem Statement:
+Source: https://leetcode.com/problems/prison-cells-after-n-days/
+
+Solution 1:
+
+Brute Force: For every(N) iteration change the cells, following the conditions and than return cells.
+
+Time Complexity O(n)
+Space Complexity O(1)
+
+But you'll get the TLE for basiclly large N as N <= 10^9
+
+
+Solution 2:
+
+As there are constant cell: 8. The number of different combination of 0 and 1 can be 2^8. Following the constraint
+as first and last will always be 0, which reduces the combination to 2^6.
+
+So basically after (max 2^6), the patterns of 0 and 1 will repeat. Let's find where it repeats.
+
+To find the repetition:
+1. Take a HashSet and put cell combination into it (Convert array to String).
+
+Learning:
+--> Difference between Arrays.toString(array) and array.toString()
+--> Difference between == and .equals
+
+2. The moment you find that combination in Set, you find a repeat. Break out of loop and hashSet size is where it repeats.
+
+
+Caution: As first combination can contains 1 at 0th and 7th index of combination and it will never repeat.
+Starting inserting into set after 1st Day. and when you find the loop repetition.
+
+Proof that repetition of that string will be from 1st day.
+A, B, C, D, ..., B -> another day repetition Assumption: Now how B state can Arrive, it can arrive from (other than A) , let's assume X
+state. So a State B can be reached from 2 different states, which Logically is not possible. So hence X = A.
+
+/*Happy Coding*/
