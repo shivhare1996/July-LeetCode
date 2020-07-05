@@ -1,0 +1,44 @@
+/**
+ * Date 05/07/2020
+ * @author Aman Shivhare
+ *
+ * Source: https://leetcode.com/problems/hamming-distance/
+ *
+ */
+
+ Problem Statement is to find the difference in bits in both the numbers.
+ So, to find that we simply have to count the number of 1s in the XOR of both the number.
+
+ XOR:
+ 1^0 = 1
+ 1^1 = 0
+ 0^0 = 0
+
+How to count number of 1s in the number.
+
+ Solution 1:
+
+Simply shift the number one by one to the right and &(And) with 1 to find the rightmost digit, and count it.
+Let x be the number. So till x != 0 do this. (X>>1 & 1)
+
+Time Complexity O(n)
+Space Complexity O(1)
+
+
+ Solution 2:
+
+This is the interesting solution. Notice what will happen if a (number) is AND with (number-1):
+
+Number & (Number-1) : -> it will delete the rightmost set bit.
+
+10101....1000 Let this be x
+10101....0111 This will be x-1
+
+so Anding these will set the rightmost set bit to 0.
+
+To find the set bits in a number, x&(x-1), increase the count and set x to this (x&(x-1))
+
+Time Complexity O(set Bits) -> which will be very fast.
+Space Complexity O(1)
+
+/*Happy Coding*/
