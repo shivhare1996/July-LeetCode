@@ -1,0 +1,33 @@
+/**
+ * Date 06/07/2020
+ * @author Aman Shivhare
+ *
+ * Source: https://leetcode.com/problems/plus-one/
+ *
+ */
+
+
+ Solution 1:
+
+ Traverse the array from back, and add one once. Maintain the carry and do it till we reach the first element of array.
+ Only thing to notice here is, if input is like [9], or [9, 9], these input will change the size of result array.
+
+ Check after loop, if we still have something in carry, if we have, then only we have to create a new array with first
+ element as carry and then copy the input array to new created array.
+
+ JAVA :
+ for copying array you can use System method also.
+ System.arraycopy(digits, 0, ans, 1, n);
+
+ Time Complexity O(n)
+ Space Complexity O(1)
+
+
+ Solution 2:
+
+ Little optimisation can be made in previous solution. That is if we don't have carry we dont have to traverse the whole array.
+ As soon as carry becomes 0, there is no need to add 0 and update the array.
+ This is increase the speed very much. As we are not travlling whole array.
+
+ Time Complexity O(n)
+ Space Complexity O(1)
