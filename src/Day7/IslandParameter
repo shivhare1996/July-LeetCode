@@ -1,0 +1,45 @@
+/**
+ * Date 07/07/2020
+ * @author Aman Shivhare
+ *
+ * Source: https://leetcode.com/problems/island-perimeter/
+ *
+ */
+
+
+
+ Solution1 :
+
+ To calculate parameter, we have to calculate the ones(land) in the 2D array.
+ A block of land can have parameter between (0-4) units
+
+ 0 0 0      1 1 1
+ 0 1 0      1 1 1
+ 0 0 0      1 1 1
+
+  (A)        (B)
+
+
+Land A(middle-1) has paramter 4
+Land B(middle-1) has paramter 0
+
+
+SO we have to calculate the neighbours which made the parameter and check if it is land, it is not counted else counted.
+
+Traverse through the array, check if the element is 1. If it is 1,
+Increase the paramter to it's full capacity, see how many neighbours have 1 and decrease the parameter by 1.
+
+ Time Complexity O(m*n)
+ Space Complexity O(1)
+
+
+ Solution2 :
+
+ Little Optimization in above Solution is, you can check the neighbours in (i-1)(j) and (i)(j-1)
+ All piece of land can be calculated (how many total 1, the island) and subtract by sharing boundaries, and as
+ a boundary can be shared by only 2 peices of 1, so TotalOne*4 - SharingBoundaries*2 is the desired result.
+
+  Time Complexity O(m*n)
+  Space Complexity O(1)
+
+  /*Happy Coding*/
